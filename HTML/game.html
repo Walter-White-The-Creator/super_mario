@@ -1,28 +1,43 @@
-<!DOCTYPE html> <!--dit is het document type-->
+<!DOCTYPE html>
 <html lang="nl-BE">
-    <head>
-        <meta charset="UTF-8">
-        <title>Super Mario</title>
-        <link rel="stylesheet" href="../CSS/style.css">
-    </head>
-    <body>
-        <div class="game-board">
-            <h1>klik de vraagtekens voor coins</h1>
-            <p>hoe meer hoe beter!</p>
-        
-            <a class="home-link" href="../index.html">startpagina</a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Super Mario - Spel</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
 
-        <button id="knop1">Knop 1</button>
-        <button id="knop2">Knop 2</button>
-        <button id="knop3">Knop 3</button>
-        <button id="knop4">Knop 4</button>
+  <h1>Kies een niveau!</h1>
 
-        <br>
+  <!-- 4 blokken met knoppen -->
+  <div class="blokken-rij">
 
-        <img id="mijnGif" src="../MEDIA/gif.gif" alt="Feest GIF">
+    <div class="blok-wrapper">
+      <img class="coin" src="coin.gif" alt="coin">
+      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
+      <p>Niveau 1</p>
+    </div>
 
-        <script src="../JS/app.js"></script>
-        
-    </body>
+    <div class="blok-wrapper">
+      <img class="coin" src="coin.gif" alt="coin">
+      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
+      <p>Niveau 2</p>
+    </div>
+
+    <div class="blok-wrapper">
+      <img class="coin" src="coin.gif" alt="coin">
+      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
+      <p>Niveau 3</p>
+    </div>
+
+    <div class="blok-wrapper">
+      <img class="coin" src="coin.gif" alt="coin">
+      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
+      <p>Niveau 4</p>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
 </html>
