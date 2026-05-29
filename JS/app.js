@@ -1,8 +1,8 @@
-const knop = document.getElementById("knop1");
+const buttons = document.querySelectorAll("button[id^='knop']");
 const gif = document.getElementById("mijnGif");
 
-
-knop.addEventListener("click", function() {
-    
-    gif.style.display = "block";
+buttons.forEach(button => {
+    button.addEventListener("click", function() {
+        gif.style.display = "block";
+    });
 });
