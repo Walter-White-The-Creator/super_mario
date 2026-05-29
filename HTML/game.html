@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Super Mario - Spel</title>
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-  <h1>Kies een niveau!</h1>
-
-  <!-- 4 blokken met knoppen -->
-  <div class="blokken-rij">
-
-    <div class="blok-wrapper">
-      <img class="coin" src="coin.gif" alt="coin">
-      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
-      <p>Niveau 1</p>
-    </div>
-
-    <div class="blok-wrapper">
-      <img class="coin" src="coin.gif" alt="coin">
-      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
-      <p>Niveau 2</p>
-    </div>
-
-    <div class="blok-wrapper">
-      <img class="coin" src="coin.gif" alt="coin">
-      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
-      <p>Niveau 3</p>
-    </div>
-
-    <div class="blok-wrapper">
-      <img class="coin" src="coin.gif" alt="coin">
-      <button class="vraagteken-blok" onclick="toonCoin(this)">?</button>
-      <p>Niveau 4</p>
-    </div>
-
+  <div class="blok" id="blok1">
+    <img class="coin" src="../MEDIA/gif.gif" alt="coin">
+    <button class="knop" onclick="toonCoin(this)"></button>
   </div>
 
-  <script src="game.js"></script>
+  <div class="blok" id="blok2">
+    <img class="coin" src="../MEDIA/gif_-_kopie.gif" alt="coin">
+    <button class="knop" onclick="toonCoin(this)"></button>
+  </div>
+
+  <div class="blok" id="blok3">
+    <img class="coin" src="../MEDIA/gif_-_kopie__2_.gif" alt="coin">
+    <button class="knop" onclick="toonCoin(this)"></button>
+  </div>
+
+  <div class="blok" id="blok4">
+    <img class="coin" src="../MEDIA/gif_-_kopie__3_.gif" alt="coin">
+    <button class="knop" onclick="toonCoin(this)"></button>
+  </div>
+
+  <script>
+    function toonCoin(knop) {
+      var coin = knop.parentElement.querySelector('.coin');
+      coin.classList.remove('actief');
+      void coin.offsetWidth;
+      coin.classList.add('actief');
+      setTimeout(function() { coin.classList.remove('actief'); }, 750);
+    }
+  </script>
+
 </body>
 </html>
