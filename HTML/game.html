@@ -20,34 +20,20 @@
                 <button class="coin-button" data-button="3">Knop 3</button>
                 <button class="coin-button" data-button="4">Knop 4</button>
             </div>
+            
 
-            <div id="message">Klik één van de vier knoppen om de GIF te zien.</div>
+            
             <a class="home-link" href="../index.html">startpagina</a>
         </div>
 
-        <script>
-            const gif = document.getElementById('mijn-gif');
-            const message = document.getElementById('message');
-            const buttons = document.querySelectorAll('.coin-button');
-            const gifMap = {
-                '1': '../MEDIA/gif.gif',
-                '2': '../MEDIA/gif - kopie.gif',
-                '3': '../MEDIA/gif - kopie (2).gif',
-                '4': '../MEDIA/gif - kopie (3).gif'
-            };
+        <button id="knop1">Klik voor GIF</button>
+        
+        <br>
 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const buttonNumber = button.dataset.button;
-                    gif.src = gifMap[buttonNumber] || '../MEDIA/gif.gif';
-                    gif.style.display = 'block';
-                    message.textContent = `Knop ${buttonNumber} is aangeklikt! De GIF verschijnt bovenaan.`;
-                    clearTimeout(window.gifTimeout);
-                    window.gifTimeout = setTimeout(() => {
-                        gif.style.display = 'none';
-                    }, 2000);
-                });
-            });
-        </script>
+        <img id="mijnGif" src="https://giphy.com" alt="Feest GIF">
+
+        <script src="script.js"></script>
+
+        
     </body>
 </html>    
