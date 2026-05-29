@@ -1,9 +1,13 @@
 body {
-    body {
     background-image: url('../MEDIA/thumb-1920-860645.png');
-    background-size: cover;                  
-    background-position: center;             
-    background-repeat: no-repeat;            
-    background-attachment: fixed;            
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+#mijnGif {
+    display: none;
+    margin-top: 20px;
+    max-width: 300px;
 }
