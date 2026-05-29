@@ -10,15 +10,15 @@
             <h1>klik de vraagtekens voor coins</h1>
             <p>hoe meer hoe beter!</p>
 
+            <div class="gif-area">
+                <img id="mijn-gif" src="../MEDIA/gif.gif" alt="coin gif">
+            </div>
+
             <div class="button-grid">
                 <button class="coin-button" data-button="1">Knop 1</button>
                 <button class="coin-button" data-button="2">Knop 2</button>
                 <button class="coin-button" data-button="3">Knop 3</button>
                 <button class="coin-button" data-button="4">Knop 4</button>
-            </div>
-
-            <div class="gif-area">
-                <img id="mijn-gif" src="../MEDIA/gif.gif" alt="coin gif">
             </div>
 
             <div id="message">Klik één van de vier knoppen om de GIF te zien.</div>
@@ -29,13 +29,19 @@
             const gif = document.getElementById('mijn-gif');
             const message = document.getElementById('message');
             const buttons = document.querySelectorAll('.coin-button');
+            const gifMap = {
+                '1': '../MEDIA/gif.gif',
+                '2': '../MEDIA/gif - kopie.gif',
+                '3': '../MEDIA/gif - kopie (2).gif',
+                '4': '../MEDIA/gif - kopie (3).gif'
+            };
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     const buttonNumber = button.dataset.button;
+                    gif.src = gifMap[buttonNumber] || '../MEDIA/gif.gif';
                     gif.style.display = 'block';
                     message.textContent = `Knop ${buttonNumber} is aangeklikt! De GIF verschijnt bovenaan.`;
-                    // Verberg de GIF weer na 2 seconden
                     clearTimeout(window.gifTimeout);
                     window.gifTimeout = setTimeout(() => {
                         gif.style.display = 'none';
