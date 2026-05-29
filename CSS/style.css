@@ -1,0 +1,35 @@
+body {
+    background-image: url('../MEDIA/thumb-1920-860645.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+button {
+    position: absolute;
+    top: 518px;
+    left: 921px;
+    width: 55px;
+    height: 55px;
+    background-image: url('../MEDIA/2ba9aee54c4300875e74b69b26f6fbea.png');  /* Foto toevoegen */
+    background-size: cover;     /* Foto vult de hele button */
+    background-repeat: no-repeat;
+    background-position: center; /* Foto in het midden */
+    border: 6px rgb(88, 145, 255);
+    border-radius: 0px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+#mijn-gif {
+    position: absolute;
+    top: 463px;  /* Recht boven de button (518 - 55) */
+    left: 921px;
+    width: 55px;
+    height: 55px;
+    display: none;  /* Verberg de GIF standaard */
+}
+
+
