@@ -1,4 +1,4 @@
-
+/* ======= PAGINA ======= */
 body {
   margin: 0;
   width: 100vw;
@@ -9,18 +9,36 @@ body {
   background-position: center;
 }
 
+/* ======= TERUGLINK ======= */
+.terug {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 2px 2px 0 black;
+  text-decoration: none;
+}
 
+.terug:hover {
+  color: #f5a500;
+}
+
+/* ======= BLOK POSITIE OP DE ACHTERGROND ======= */
 .blok {
   position: absolute;
   transform: translate(-50%, -50%);
 }
 
-#blok1 { left: 60%; top: 64%; }
-#blok2 { left: 77%; top: 54%; }
-#blok3 { left: 87%; top: 54%; }
-#blok4 { left: 84%; top: 32%; }
+/* Posities aangepast op basis van screenshot */
+#blok1 { left: 59%; top: 67%; }   /* los blok midden */
+#blok2 { left: 77%; top: 67%; }   /* rij rechts: 1e vraagteken */
+#blok3 { left: 87%; top: 67%; }   /* rij rechts: 2e vraagteken */
+#blok4 { left: 84%; top: 47%; }   /* hoog blok rechtsboven */
 
-
+/* ======= KNOP = vraagteken blok plaatje ======= */
 .knop {
   width: 48px;
   height: 48px;
@@ -37,7 +55,7 @@ body {
   transform: translateY(-8px);
 }
 
-
+/* ======= COIN GIF boven de knop ======= */
 .coin {
   width: 40px;
   height: 40px;
@@ -57,21 +75,4 @@ body {
   0%   { opacity: 1; top:   0px; }
   40%  { opacity: 1; top: -70px; }
   100% { opacity: 0; top: -90px; }
-}
-
-
-.terug {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 2px 2px 0 black;
-  text-decoration: none;
-}
-
-.terug:hover {
-  color: #f5a500;
 }
