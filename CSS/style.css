@@ -1,21 +1,12 @@
-/* ALGEMENE STIJL */
-/* Lettertype en marges voor alle pagina's */
+/* 2. Algemene opmaak: Mario-blauw als standaard achtergrond */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #5c94fc; /* Mario-blauw als standaard achtergrond */
+  background-color: #5c94fc; 
   color: white;
 }
 
-/* SPELPAGINA */
-/* Achtergrondafbeelding alleen op de spelpagina */
-body.spel-pagina {
-  background-image: url('../media/bg.png');
-  background-size: cover;
-  background-position: center;
-}
-
-/* HEADER */
+/* 3. Header styling met flexbox voor uitlijning */
 header {
   display: flex;
   align-items: center;
@@ -24,14 +15,17 @@ header {
   padding: 10px 20px;
 }
 
-/* Logo klein houden */
 .logo {
   width: 40px;
   height: 40px;
-  image-rendering: pixelated;
+  background-color: #f89828;
+  border: 2px solid white;
+  text-align: center;
+  line-height: 36px;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
-/* NAVIGATIE */
 nav {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 8px 20px;
@@ -39,32 +33,23 @@ nav {
   gap: 20px;
 }
 
-/* Navigatielinks stijl */
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
 }
 
 nav a:hover {
-  color: #f5a500; /* Mario-oranje bij hover */
+  color: #f5a500;
 }
 
-/* MAIN INHOUD */
 main {
   padding: 30px 20px;
   text-align: center;
+  min-height: 60vh;
 }
 
-/* Welkomstafbeelding op de startpagina */
-.preview {
-  max-width: 600px;
-  width: 100%;
-  margin-top: 16px;
-  border: 3px solid white;
-}
-
-/* Linkknop stijl */
 .knop-link {
   display: inline-block;
   margin-top: 20px;
@@ -74,71 +59,73 @@ main {
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
+  cursor: pointer;
+  border: none;
 }
 
 .knop-link:hover {
   background-color: #c0392b;
 }
 
-/* SPEELVELD MET BLOKKEN */
-/* De 4 blokken naast elkaar getoond */
+/* 4. Speelveld opmaak: Gebruik flexbox om blokken naast elkaar te zetten */
 .speelveld {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
-/* Elk blok heeft een relatieve positie zodat de coin erboven zweeft */
 .blok {
   position: relative;
 }
 
-/* VRAAGTEKEN KNOP */
+/* 5. Vraagteken knop styling met CSS zodat het op Mario lijkt */
 .knop {
-  width: 48px;
-  height: 48px;
-  background-image: url('../media/vraagteken.png');
-  background-size: cover;
-  background-color: transparent;
-  border: none;
+  width: 60px;
+  height: 60px;
+  background-color: #f89828;
+  border: 4px solid #000;
+  border-radius: 4px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
   cursor: pointer;
-  image-rendering: pixelated;
   display: block;
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3);
 }
 
-/* Knop springt omhoog bij klikken */
 .knop:active {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
+  box-shadow: inset -2px -2px 0px rgba(0,0,0,0.3);
 }
 
-/* COIN GIF */
-/* Coin is onzichtbaar totdat de .actief klasse wordt toegevoegd */
+/* 6. Munt animatie styling */
 .coin {
-  width: 40px;
+  width: 30px;
   height: 40px;
+  background-color: #f8d800;
+  border: 2px solid black;
+  border-radius: 50%;
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
-/* Animatie wanneer de coin actief is */
 .coin.actief {
-  animation: springOmhoog 0.7s ease-out forwards;
+  animation: springOmhoog 0.5s ease-out forwards;
 }
 
-/* Coin vliegt omhoog en verdwijnt */
 @keyframes springOmhoog {
-  0%   { opacity: 1; top: 0px; }
-  40%  { opacity: 1; top: -70px; }
-  100% { opacity: 0; top: -90px; }
+  0%   { opacity: 1; top: 10px; }
+  50%  { opacity: 1; top: -60px; }
+  100% { opacity: 0; top: -80px; }
 }
 
-/* Scoreteller stijl */
 #score {
   width: 100%;
   text-align: center;
@@ -148,14 +135,12 @@ main {
   margin-top: 20px;
 }
 
-/* FOOTER */
 footer {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 12px 20px;
   text-align: center;
 }
 
-/* Tabel in de footer */
 footer table {
   margin: 0 auto;
   border-collapse: collapse;
@@ -166,27 +151,24 @@ footer td, footer th {
   color: white;
 }
 
-/*  RESPONSIVE DESIGN /
-
-/* Tablet (≤768px) */
+/* 7. Responsief design voor tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .speelveld {
     gap: 24px;
-    padding: 40px 10px;
+  }
+  .knop {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }
 
-/* Mobiel (≤480px) */
+/* 8. Responsief design voor mobiele telefoons (max-width: 480px) */
 @media (max-width: 480px) {
   header h1 {
     font-size: 18px;
   }
   .speelveld {
     gap: 16px;
-    padding: 30px 8px;
-  }
-  .knop {
-    width: 40px;
-    height: 40px;
   }
 }
