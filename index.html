@@ -1,17 +1,43 @@
-<!DOCTYPE html> <!--dit is het document type-->
+<!DOCTYPE html>
+<!-- Hoofdpagina van de Super Mario website -->
 <html lang="nl-BE">
-    <head>
-        <meta charset="UTF-8">
-        <title>Super Mario</title>
-        <link rel="stylesheet" href="../CSS/style.css">
-    </head>
-    <body>
-        <h1>Super Mario</h1>
-        <p>welkom op de Super Mario website!</p>
-        <p>wat en waar over wil je iets weten?</p>
-        <a href="../super_mario/HTML/game.html">Bekijk het spel
-        </a>
-    </body>
-        
-    </body>
-</html>    
+  <head>
+    <meta charset="UTF-8">
+    <title>Super Mario</title>
+    <!-- Externe CSS-stijlbestand koppelen -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!-- Header met logo en titel -->
+    <header>
+      <img src="media/vraagteken.png" alt="logo" class="logo">
+      <h1>Super Mario</h1>
+    </header>
+
+    <!-- Navigatiebalk -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="html/game.html">Spel</a>
+    </nav>
+
+    <!-- Hoofdinhoud -->
+    <main>
+      <h2>Welkom op de Super Mario website!</h2>
+      <p>Klik hieronder om het spel te spelen.</p>
+      <!-- Achtergrondafbeelding van Mario als welkomstfoto -->
+      <img src="media/bg.png" alt="Mario achtergrond" class="preview">
+      <br>
+      <a href="html/game.html" class="knop-link">▶ Speel het spel</a>
+    </main>
+
+    <!-- Voettekst met schooladres -->
+    <footer>
+      <table>
+        <tr><th>School</th><td>GO! Atheneum</td></tr>
+        <tr><th>Adres</th><td>Schoolstraat 1, 1000 Brussel</td></tr>
+      </table>
+    </footer>
+
+  </body>
+</html>

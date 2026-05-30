@@ -1,43 +1,68 @@
 <!DOCTYPE html>
+<!-- Spelpagina met 4 interactieve vraagteken-blokken -->
 <html lang="nl-BE">
-<head>
-  <meta charset="UTF-8">
-  <title>Super Mario - Spel</title>
-  <link rel="stylesheet" href="../CSS/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Super Mario – Spel</title>
+    <!-- Externe CSS koppelen -->
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body class="spel-pagina">
 
-  <a class="terug" href="../index.html">⬅ Terug naar startpagina</a>
+    <!-- Header met logo en titel -->
+    <header>
+      <img src="../media/vraagteken.png" alt="logo" class="logo">
+      <h1>Super Mario – Spel</h1>
+    </header>
 
-  <div class="blok" id="blok1">
-    <img class="coin" src="../MEDIA/gif.gif" alt="coin">
-    <button class="knop" onclick="toonCoin(this)"></button>
-  </div>
+    <!-- Navigatiebalk -->
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="game.html">Spel</a>
+    </nav>
 
-  <div class="blok" id="blok2">
-    <img class="coin" src="../MEDIA/gif - kopie.gif" alt="coin">
-    <button class="knop" onclick="toonCoin(this)"></button>
-  </div>
+    <!-- Spelgebied met 4 blokken -->
+    <main class="speelveld">
 
-  <div class="blok" id="blok3">
-    <img class="coin" src="../MEDIA/gif - kopie (2).gif" alt="coin">
-    <button class="knop" onclick="toonCoin(this)"></button>
-  </div>
+      <!-- Blok 1: knop met coin-animatie -->
+      <div class="blok">
+        <img class="coin" src="../media/coin1.gif" alt="coin">
+        <button class="knop" onclick="toonCoin(this)"></button>
+      </div>
 
-  <div class="blok" id="blok4">
-    <img class="coin" src="../MEDIA/gif - kopie (3).gif" alt="coin">
-    <button class="knop" onclick="toonCoin(this)"></button>
-  </div>
+      <!-- Blok 2 -->
+      <div class="blok">
+        <img class="coin" src="../media/coin2.gif" alt="coin">
+        <button class="knop" onclick="toonCoin(this)"></button>
+      </div>
 
-  <script>
-    function toonCoin(knop) {
-      var coin = knop.parentElement.querySelector('.coin');
-      coin.classList.remove('actief');
-      void coin.offsetWidth;
-      coin.classList.add('actief');
-      setTimeout(function() { coin.classList.remove('actief'); }, 750);
-    }
-  </script>
+      <!-- Blok 3 -->
+      <div class="blok">
+        <img class="coin" src="../media/coin3.gif" alt="coin">
+        <button class="knop" onclick="toonCoin(this)"></button>
+      </div>
 
-</body>
+      <!-- Blok 4 -->
+      <div class="blok">
+        <img class="coin" src="../media/coin4.gif" alt="coin">
+        <button class="knop" onclick="toonCoin(this)"></button>
+      </div>
+
+      <!-- Scoreteller (datastructuur + controlestructuur in app.js) -->
+      <p id="score">Coins: 0</p>
+
+    </main>
+
+    <!-- Voettekst met schooladres -->
+    <footer>
+      <table>
+        <tr><th>School</th><td>GO! Atheneum</td></tr>
+        <tr><th>Adres</th><td>Schoolstraat 1, 1000 Brussel</td></tr>
+      </table>
+    </footer>
+
+    <!-- Externe JavaScript koppelen -->
+    <script src="../js/app.js"></script>
+
+  </body>
 </html>
