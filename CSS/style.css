@@ -1,78 +1,174 @@
-/* ======= PAGINA ======= */
+/* 2. Algemene opmaak: Mario-blauw als standaard achtergrond */
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-image: url('../MEDIA/thumb-1920-860645.png');
-  background-size: cover;
-  background-position: center;
-}
-
-/* ======= TERUGLINK ======= */
-.terug {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: white;
   font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 2px 2px 0 black;
-  text-decoration: none;
+  background-color: #5c94fc;
+  color: white;
 }
 
-.terug:hover {
+/* 3. Header styling met flexbox voor uitlijning */
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: #f89828;
+  border: 2px solid white;
+  text-align: center;
+  line-height: 36px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
   color: #f5a500;
 }
 
-/* ======= BLOK POSITIE OP DE ACHTERGROND ======= */
-.blok {
-  position: absolute;
-  transform: translate(-50%, -50%);
+main {
+  padding: 30px 20px;
+  text-align: center;
+  min-height: 60vh;
 }
 
-/* Posities aangepast op basis van screenshot */
-#blok1 { left: 59%; top: 67%; }   /* los blok midden */
-#blok2 { left: 77%; top: 67%; }   /* rij rechts: 1e vraagteken */
-#blok3 { left: 87%; top: 67%; }   /* rij rechts: 2e vraagteken */
-#blok4 { left: 84%; top: 47%; }   /* hoog blok rechtsboven */
-
-/* ======= KNOP = vraagteken blok plaatje ======= */
-.knop {
-  width: 48px;
-  height: 48px;
-  background-image: url('../MEDIA/2ba9aee54c4300875e74b69b26f6fbea.png');
-  background-size: cover;
-  background-color: transparent;
-  border: none;
+.knop-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  image-rendering: pixelated;
+  border: none;
+}
+
+.knop-link:hover {
+  background-color: #c0392b;
+}
+
+/* 4. Speelveld opmaak: Gebruik flexbox om blokken naast elkaar te zetten */
+.speelveld {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.blok {
+  position: relative;
+}
+
+/* 5. Vraagteken knop styling met CSS zodat het op Mario lijkt */
+.knop {
+  width: 60px;
+  height: 60px;
+  background-color: #f89828;
+  border: 4px solid #000;
+  border-radius: 4px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
   display: block;
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3);
 }
 
 .knop:active {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
+  box-shadow: inset -2px -2px 0px rgba(0,0,0,0.3);
 }
 
-/* ======= COIN GIF boven de knop ======= */
+/* 6. Munt animatie styling */
 .coin {
-  width: 40px;
+  width: 30px;
   height: 40px;
+  background-color: #f8d800;
+  border: 2px solid black;
+  border-radius: 50%;
   position: absolute;
-  top: 0px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
 .coin.actief {
-  animation: springOmhoog 0.7s ease-out forwards;
+  animation: springOmhoog 0.5s ease-out forwards;
 }
 
 @keyframes springOmhoog {
-  0%   { opacity: 1; top:   0px; }
-  40%  { opacity: 1; top: -70px; }
-  100% { opacity: 0; top: -90px; }
+  0%   { opacity: 1; top: 10px; }
+  50%  { opacity: 1; top: -60px; }
+  100% { opacity: 0; top: -80px; }
+}
+
+#score {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 black;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12px 20px;
+  text-align: center;
+}
+
+footer table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+footer td, footer th {
+  padding: 4px 12px;
+  color: white;
+}
+
+/* 7. Responsief design voor tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .speelveld {
+    gap: 24px;
+  }
+  .knop {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+/* 8. Responsief design voor mobiele telefoons (max-width: 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 18px;
+  }
+  .speelveld {
+    gap: 16px;
+  }
 }

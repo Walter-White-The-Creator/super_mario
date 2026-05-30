@@ -1,19 +1,28 @@
+
+// 9. Datastructuur: Object om de score bij te houden per spel
+let spelData = {
+  score: 0
+};
+
+// 10. Functie: Wordt opgeroepen wanneer de gebruiker op een vraagteken-knop klikt
 function toonCoin(knop) {
-  // Haal de coin img op uit dezelfde blok-wrapper
-  var wrapper = knop.parentElement;
-  var coin = wrapper.querySelector('.coin');
+  let coin = knop.parentElement.querySelector('.coin');
 
-  // Verwijder de klasse eerst (voor herhaald klikken)
-  coin.classList.remove('springt');
+  coin.classList.remove('actief');
+  void coin.offsetWidth;
+  coin.classList.add('actief');
 
-  // Even wachten zodat de animatie opnieuw start
-  void coin.offsetWidth; // forceer reflow
+  spelData.score = spelData.score + 1;
+  document.getElementById('score').textContent = 'Coins: ' + spelData.score;
 
-  // Zet de animatie terug aan
-  coin.classList.add('springt');
+  // Controlestructuur: Toon een bericht bij elke 10 coins
+  if (spelData.score % 10 === 0) {
+    alert('Wauw! Je hebt al ' + spelData.score + ' coins verzameld!');
+  }
 
-  // Na de animatie: verberg de coin weer
-  setTimeout(function() {
-    coin.classList.remove('springt');
-  }, 700);
+  setTimeout(function () {
+    coin.classList.remove('actief');
+  }, 500);
 }
+
+
