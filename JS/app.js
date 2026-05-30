@@ -1,4 +1,3 @@
-
 // 9. Datastructuur: Object om de score bij te houden per spel
 let spelData = {
   score: 0
@@ -24,5 +23,4 @@ function toonCoin(knop) {
     coin.classList.remove('actief');
   }, 500);
 }
-
 
