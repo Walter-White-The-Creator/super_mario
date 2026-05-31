@@ -8,7 +8,7 @@ function toonCoin(knop) {
   let coin = knop.parentElement.querySelector('.coin');
 
   coin.classList.remove('actief');
-  void coin.offsetWidth;
+  void coin.offsetWidth; 
   coin.classList.add('actief');
 
   spelData.score = spelData.score + 1;
@@ -23,4 +23,3 @@ function toonCoin(knop) {
     coin.classList.remove('actief');
   }, 500);
 }
-
